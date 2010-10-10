@@ -35,6 +35,8 @@ git clone git://github.com/ralphbean/tw2.protovis.core.git || \
         (pushd tw2.protovis.core && git pull && popd)
 git clone git://github.com/ralphbean/tw2.protovis.conventional.git || \
         (pushd tw2.protovis.conventional && git pull && popd)
+git clone git://github.com/ralphbean/tw2.protovis.custom.git || \
+        (pushd tw2.protovis.custom && git pull && popd)
 
 pushd tw2core ;  python setup.py develop ; popd
 pushd tw2forms ; python setup.py develop ; popd
@@ -46,5 +48,6 @@ pushd tw2.jquery_jqgrid ; python setup.py develop ; popd
 pushd tw2.jit ; python setup.py develop ; popd
 pushd tw2.protovis.core ; python setup.py develop ; popd
 pushd tw2.protovis.conventional ; python setup.py develop ; popd
+pushd tw2.protovis.custom ; python setup.py develop ; popd
 
 pushd # $devbase
