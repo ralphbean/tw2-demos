@@ -21,14 +21,14 @@ hg clone http://bitbucket.org/paj/tw2devtools || \
         (pushd tw2devtools && hg pull && popd)
 hg clone http://bitbucket.org/paj/tw2forms || \
         (pushd tw2forms && hg pull && popd)
-git clone git://github.com/ralphbean/tw2.jquery_core.git || \
-        (pushd tw2.jquery_core && git pull && popd)
-git clone git://github.com/ralphbean/tw2.jquery_ui.git || \
-        (pushd tw2.jquery_ui && git pull && popd)
-git clone git://github.com/ralphbean/tw2.jquery_fg.git || \
-        (pushd tw2.jquery_fg && git pull && popd)
-git clone git://github.com/ralphbean/tw2.jquery_jqgrid.git || \
-        (pushd tw2.jquery_jqgrid && git pull && popd)
+hg clone http://bitbucket.org/toscawidgets/tw2jquery || \
+        (pushd tw2jquery && hg pull && popd)
+git clone git://github.com/ralphbean/tw2.jquery.plugins.ui.git || \
+        (pushd tw2.jquery.plugins.ui && git pull && popd)
+git clone git://github.com/ralphbean/tw2.jquery.plugins.fg.git || \
+        (pushd tw2.jquery.plugins.fg && git pull && popd)
+git clone git://github.com/ralphbean/tw2.jquery.plugins.jqgrid.git || \
+        (pushd tw2.jquery.plugins.jqgrid && git pull && popd)
 git clone git://github.com/ralphbean/tw2.jit.git || \
         (pushd tw2.jit && git pull && popd)
 git clone git://github.com/ralphbean/tw2.protovis.core.git || \
@@ -43,10 +43,10 @@ git clone git://github.com/ralphbean/tw2.protovis.hierarchies.git || \
 pushd tw2core ;  python setup.py develop ; popd
 pushd tw2forms ; python setup.py develop ; popd
 pushd tw2devtools ; python setup.py develop ; popd
-pushd tw2.jquery_core ; python setup.py develop ; popd
-pushd tw2.jquery_ui ; python setup.py develop ; popd
-pushd tw2.jquery_fg ; python setup.py develop ; popd
-pushd tw2.jquery_jqgrid ; python setup.py develop ; popd
+pushd tw2jquery ; python setup.py install_lib install_egg_info ; popd
+pushd tw2.jquery.plugins.ui ; python setup.py install_lib install_egg_info ; popd
+pushd tw2.jquery.plugins.fg ; python setup.py install_lib install_egg_info ; popd
+pushd tw2.jquery.plugins.jqgrid ; python setup.py install_lib install_egg_info ; popd
 pushd tw2.jit ; python setup.py develop ; popd
 pushd tw2.protovis.core ; python setup.py develop ; popd
 pushd tw2.protovis.conventional ; python setup.py develop ; popd
