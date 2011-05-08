@@ -1,62 +1,56 @@
 #!/bin/bash -e
 
 devbase=development-deps
-venv=$devbase/virtualenv-tw2.jquery
+venv=$devbase/virtualenv
 $(
     rm -rf $venv
 ) || echo "Did not destroy $venv"
 
-virtualenv $venv --no-site-packages
+virtualenv --no-site-packages $venv
 
 source $venv/bin/activate
 
-pip install genshi || exit
-pip install formencode || exit
+pip install --use-mirrors genshi mako formencode || exit
+
+function bitbucket_clone {
+        hg clone http://bitbucket.org/$1/$2 || \
+                (pushd $2 && hg pull && hg update && popd)
+        pushd $2 ; python setup.py develop install_lib install_egg_info ; popd
+}
+
+function github_clone {
+        git clone git://github.com/$1/$2.git || \
+                (pushd $2 && git pull && popd)
+        pushd $2 ; python setup.py develop install_lib install_egg_info ; popd
+}
 
 pushd $devbase
 
-hg clone http://bitbucket.org/paj/tw2core || \
-        (pushd tw2core && hg pull && popd)
-hg clone http://bitbucket.org/paj/tw2devtools || \
-        (pushd tw2devtools && hg pull && popd)
-hg clone http://bitbucket.org/paj/tw2forms || \
-        (pushd tw2forms && hg pull && popd)
+bitbucket_clone ralphbean tw2core
+bitbucket_clone ralphbean tw2.devtools
+bitbucket_clone paj tw2forms
+bitbucket_clone toscawidgets tw2jquery
 
-hg clone http://bitbucket.org/toscawidgets/tw2jquery || \
-        (pushd tw2jquery && hg pull && popd)
-git clone git://github.com/ralphbean/tw2.jquery.plugins.ui.git || \
-        (pushd tw2.jquery.plugins.ui && git pull && popd)
-git clone git://github.com/ralphbean/tw2.jquery.plugins.fg.git || \
-        (pushd tw2.jquery.plugins.fg && git pull && popd)
-git clone git://github.com/ralphbean/tw2.jquery.plugins.jqgrid.git || \
-        (pushd tw2.jquery.plugins.jqgrid && git pull && popd)
+bitbucket_clone josephtate tw2.jqplugins.elrte
+bitbucket_clone josephtate tw2.jqplugins.elfinder
 
-git clone git://github.com/ralphbean/tw2.jit.git || \
-        (pushd tw2.jit && git pull && popd)
+github_clone ralphbean tw2.jqplugins.ui
+github_clone ralphbean tw2.jqplugins.fg
+github_clone ralphbean tw2.jqplugins.jqgrid
+github_clone ralphbean tw2.jqplugins.jqplot
+github_clone ralphbean tw2.jqplugins.cookies
+github_clone ralphbean tw2.jqplugins.portlets
+github_clone ralphbean tw2.jqplugins.flot
+github_clone ralphbean tw2.jqplugins.dynatree
 
-git clone git://github.com/ralphbean/tw2.protovis.core.git || \
-        (pushd tw2.protovis.core && git pull && popd)
-git clone git://github.com/ralphbean/tw2.protovis.conventional.git || \
-        (pushd tw2.protovis.conventional && git pull && popd)
-git clone git://github.com/ralphbean/tw2.protovis.custom.git || \
-        (pushd tw2.protovis.custom && git pull && popd)
-git clone git://github.com/ralphbean/tw2.protovis.hierarchies.git || \
-        (pushd tw2.protovis.hierarchies && git pull && popd)
+github_clone ralphbean tw2.protovis.core
+github_clone ralphbean tw2.protovis.conventional
+github_clone ralphbean tw2.protovis.custom
+github_clone ralphbean tw2.protovis.hierarchies
 
-pushd tw2core ;  python setup.py develop ; popd
-pushd tw2forms ; python setup.py develop ; popd
-pushd tw2devtools ; python setup.py develop ; popd
-
-pushd tw2jquery ; python setup.py install_lib install_egg_info ; popd
-pushd tw2.jquery.plugins.ui ; python setup.py install_lib install_egg_info ; popd
-pushd tw2.jquery.plugins.fg ; python setup.py install_lib install_egg_info ; popd
-pushd tw2.jquery.plugins.jqgrid ; python setup.py install_lib install_egg_info ; popd
-
-pushd tw2.jit ; python setup.py develop ; popd
-
-pushd tw2.protovis.core ; python setup.py develop ; popd
-pushd tw2.protovis.conventional ; python setup.py develop ; popd
-pushd tw2.protovis.custom ; python setup.py develop ; popd
-pushd tw2.protovis.hierarchies ; python setup.py develop ; popd
+github_clone ralphbean tw2.etc
+github_clone ralphbean tw2.jit
+github_clone ralphbean tw2.tipster
+github_clone ralphbean tw2.polymaps
 
 pushd # $devbase

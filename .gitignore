@@ -15,5 +15,7 @@ tw2devtools
 tw2forms
 tw2.jit
 tw2.jquery_*
-virtualenv-*
+virtualenv*
 development-deps/development-deps
+development-deps/tw2*
+*.db
