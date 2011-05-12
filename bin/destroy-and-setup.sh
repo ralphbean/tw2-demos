@@ -48,5 +48,6 @@ github_clone ralphbean tw2.etc
 github_clone ralphbean tw2.jit
 github_clone ralphbean tw2.tipster
 github_clone ralphbean tw2.polymaps
+github_clone ralphbean tw2.rrd
 
 pushd
