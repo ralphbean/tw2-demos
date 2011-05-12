@@ -19,3 +19,5 @@ virtualenv*
 development-deps/development-deps
 development-deps/tw2*
 *.db
+build
+cloned/tw2*

@@ -1,16 +1,12 @@
 #!/bin/bash -e
 
-devbase=development-deps
-venv=$devbase/virtualenv
-$(
-    rm -rf $venv
-) || echo "Did not destroy $venv"
+source etc/common.sh
 
-virtualenv --no-site-packages $venv
+rm -rf ~/.virtualenvs/$venv || echo Did not destroy $venv
+virtualenv --no-site-packages --distribute ~/.virtualenvs/$venv
+source ~/.virtualenvs/$venv/bin/activate
 
-source $venv/bin/activate
-
-pip install --use-mirrors genshi mako formencode || exit
+pip install --use-mirrors genshi mako Mercurial formencode || exit
 
 function bitbucket_clone {
         hg clone http://bitbucket.org/$1/$2 || \
@@ -24,7 +20,7 @@ function github_clone {
         pushd $2 ; python setup.py develop install_lib install_egg_info ; popd
 }
 
-pushd $devbase
+pushd $clonedir
 
 bitbucket_clone ralphbean tw2core
 bitbucket_clone ralphbean tw2.devtools
@@ -53,4 +49,4 @@ github_clone ralphbean tw2.jit
 github_clone ralphbean tw2.tipster
 github_clone ralphbean tw2.polymaps
 
-pushd # $devbase
+pushd
