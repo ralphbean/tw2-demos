@@ -9,5 +9,5 @@ source ~/.virtualenvs/$venv/bin/activate
 
 #paster tw2.browser --port=27157
 paster tw2.browser --port=47478 \
-    --enable-pypi-metadata --enable-repo-metadata &
-
+    --enable-pypi-metadata --enable-repo-metadata > \
+    tw2-demos.log 2>&1 &

@@ -21,3 +21,4 @@ development-deps/tw2*
 *.db
 build
 cloned/tw2*
+tw2-demos.log
