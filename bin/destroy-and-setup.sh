@@ -30,6 +30,9 @@ bitbucket_clone toscawidgets tw2jquery
 bitbucket_clone josephtate tw2.jqplugins.elrte
 bitbucket_clone josephtate tw2.jqplugins.elfinder
 
+github_clone gregjurman tw2.timebar
+github_clone gregjurman tw2.qrcode
+
 github_clone ralphbean tw2.jqplugins.ui
 github_clone ralphbean tw2.jqplugins.fg
 github_clone ralphbean tw2.jqplugins.jqgrid
