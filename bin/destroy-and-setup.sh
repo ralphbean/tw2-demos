@@ -31,6 +31,7 @@ bitbucket_clone josephtate tw2.jqplugins.elrte
 bitbucket_clone josephtate tw2.jqplugins.elfinder
 
 github_clone gregjurman tw2.qrcode
+github_clone gregjurman tw2.jqplugins.markitup
 
 github_clone ralphbean tw2.jqplugins.ui
 github_clone ralphbean tw2.jqplugins.fg
