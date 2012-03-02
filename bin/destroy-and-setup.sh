@@ -52,5 +52,7 @@ github_clone ralphbean tw2.jit
 github_clone ralphbean tw2.tipster
 github_clone ralphbean tw2.polymaps
 github_clone ralphbean tw2.rrd
+github_clone ralphbean tw2.captcha
+github_clone ralphbean tw2.d3
 
 pushd
