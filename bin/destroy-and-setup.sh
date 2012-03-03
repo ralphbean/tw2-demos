@@ -48,6 +48,7 @@ github_clone ralphbean tw2.protovis.custom
 github_clone ralphbean tw2.protovis.hierarchies
 
 github_clone ralphbean tw2.etc
+github_clone ralphbean tw2.slideymenu
 github_clone ralphbean tw2.jit
 github_clone ralphbean tw2.tipster
 github_clone ralphbean tw2.polymaps
