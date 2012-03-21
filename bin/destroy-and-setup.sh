@@ -3,7 +3,7 @@
 source etc/common.sh
 
 rm -rf ~/.virtualenvs/$venv || echo Did not destroy $venv
-virtualenv --no-site-packages --distribute ~/.virtualenvs/$venv
+virtualenv --distribute ~/.virtualenvs/$venv
 source ~/.virtualenvs/$venv/bin/activate
 
 pip install --use-mirrors genshi mako Mercurial formencode || exit
@@ -22,38 +22,40 @@ function github_clone {
 
 pushd $clonedir
 
-bitbucket_clone ralphbean tw2core
-bitbucket_clone ralphbean tw2.devtools
-bitbucket_clone paj tw2forms
-bitbucket_clone toscawidgets tw2jquery
+github_clone toscawidgets tw2.core
+github_clone toscawidgets tw2.forms
+github_clone toscawidgets tw2.sqla
+github_clone toscawidgets tw2.dynforms
+github_clone toscawidgets tw2.devtools
 
-bitbucket_clone josephtate tw2.jqplugins.elrte
-bitbucket_clone josephtate tw2.jqplugins.elfinder
+github_clone toscawidgets tw2.qrcode
 
-github_clone gregjurman tw2.qrcode
-github_clone gregjurman tw2.jqplugins.markitup
+github_clone toscawidgets tw2.jqplugins.ui
+github_clone toscawidgets tw2.jqplugins.fg
+github_clone toscawidgets tw2.jqplugins.jqgrid
+github_clone toscawidgets tw2.jqplugins.jqplot
+github_clone toscawidgets tw2.jqplugins.cookies
+github_clone toscawidgets tw2.jqplugins.portlets
+github_clone toscawidgets tw2.jqplugins.flot
+github_clone toscawidgets tw2.jqplugins.dynatree
 
-github_clone ralphbean tw2.jqplugins.ui
-github_clone ralphbean tw2.jqplugins.fg
-github_clone ralphbean tw2.jqplugins.jqgrid
-github_clone ralphbean tw2.jqplugins.jqplot
-github_clone ralphbean tw2.jqplugins.cookies
-github_clone ralphbean tw2.jqplugins.portlets
-github_clone ralphbean tw2.jqplugins.flot
-github_clone ralphbean tw2.jqplugins.dynatree
+#github_clone toscawidgets tw2.protovis.core
+#github_clone toscawidgets tw2.protovis.conventional
+#github_clone toscawidgets tw2.protovis.custom
+#github_clone toscawidgets tw2.protovis.hierarchies
 
-github_clone ralphbean tw2.protovis.core
-github_clone ralphbean tw2.protovis.conventional
-github_clone ralphbean tw2.protovis.custom
-github_clone ralphbean tw2.protovis.hierarchies
+github_clone toscawidgets tw2.etc
+github_clone toscawidgets tw2.slideymenu
+github_clone toscawidgets tw2.jit
+github_clone toscawidgets tw2.tipster
+github_clone toscawidgets tw2.polymaps
+github_clone toscawidgets tw2.rrd
+github_clone toscawidgets tw2.captcha
+github_clone toscawidgets tw2.d3
 
-github_clone ralphbean tw2.etc
-github_clone ralphbean tw2.slideymenu
-github_clone ralphbean tw2.jit
-github_clone ralphbean tw2.tipster
-github_clone ralphbean tw2.polymaps
-github_clone ralphbean tw2.rrd
-github_clone ralphbean tw2.captcha
-github_clone ralphbean tw2.d3
+github_clone toscawidgets tw2.util.html5shim
+github_clone toscawidgets tw2.lesscss
+github_clone toscawidgets tw2.dyntext
+github_clone toscawidgets tw2.tinymce
 
 pushd
