@@ -35,6 +35,7 @@ github_clone toscawidgets tw2.jqplugins.fg
 github_clone toscawidgets tw2.jqplugins.jqgrid
 github_clone toscawidgets tw2.jqplugins.jqplot
 github_clone toscawidgets tw2.jqplugins.cookies
+github_clone toscawidgets tw2.jqplugins.chosen
 github_clone toscawidgets tw2.jqplugins.portlets
 github_clone toscawidgets tw2.jqplugins.flot
 github_clone toscawidgets tw2.jqplugins.dynatree
