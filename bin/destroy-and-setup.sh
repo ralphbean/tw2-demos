@@ -30,6 +30,7 @@ github_clone toscawidgets tw2.devtools
 
 github_clone toscawidgets tw2.qrcode
 
+
 github_clone toscawidgets tw2.jqplugins.ui
 github_clone toscawidgets tw2.jqplugins.fg
 github_clone toscawidgets tw2.jqplugins.jqgrid
@@ -39,6 +40,8 @@ github_clone toscawidgets tw2.jqplugins.chosen
 github_clone toscawidgets tw2.jqplugins.portlets
 github_clone toscawidgets tw2.jqplugins.flot
 github_clone toscawidgets tw2.jqplugins.dynatree
+
+github_clone toscawidgets tw2.bootstrap
 
 #github_clone toscawidgets tw2.protovis.core
 #github_clone toscawidgets tw2.protovis.conventional
