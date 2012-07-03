@@ -62,5 +62,6 @@ github_clone toscawidgets tw2.util.html5shim
 github_clone toscawidgets tw2.lesscss
 github_clone toscawidgets tw2.dyntext
 github_clone toscawidgets tw2.tinymce
+github_clone toscawidgets tw2.wysihtml5
 
 pushd
