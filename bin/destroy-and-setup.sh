@@ -44,6 +44,9 @@ github_clone toscawidgets tw2.jqplugins.dynatree
 
 github_clone toscawidgets tw2.bootstrap
 
+# TODO -- change this to "toscawidgets" once he transfers the repo.
+github_clone RobertSudwarts tw2.jqplugins.fullcalendar
+
 #github_clone toscawidgets tw2.protovis.core
 #github_clone toscawidgets tw2.protovis.conventional
 #github_clone toscawidgets tw2.protovis.custom
